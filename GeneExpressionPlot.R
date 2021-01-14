@@ -8,7 +8,7 @@ library("ggplot2")
 library("wesanderson")
 library("ggrepel")
 
-GeneExpressionPlot<-function(csvfile, genename, labels = c()) {
+GeneExpressionPlot<-function(csvfile, genename, labels = c(), height = 5, width = 7, fileName = "Depmap_Expression.pdf") {
   datadf <- read.csv(csvfile)
   datadf$labels <- ""
   colnames(datadf) <- c("ID", "Expression", "Cell_Line","Primary_Disease", "Lineage", "All_Primary_Disease","Label")
@@ -22,5 +22,5 @@ GeneExpressionPlot<-function(csvfile, genename, labels = c()) {
     theme(legend.position = "none") + scale_color_manual(values = wes_palette("Darjeeling1", length(levels(datadf$Primary_Disease)), type = "continuous"))+
     scale_fill_manual(values = wes_palette("Darjeeling1", length(levels(datadf$Primary_Disease)), type = "continuous"))
   print(graph)
-  ggsave("Depmap_Expression.pdf", width = 7, height = 5)
+  ggsave(fileName, width = width, height = height)
 }
