@@ -8,7 +8,7 @@ library("ggplot2")
 library("wesanderson")
 library("ggrepel")
 
-DepMapPlot<-function(csvfile, genename, labels = c()) {
+GeneExpressionPlot<-function(csvfile, genename, labels = c()) {
   datadf <- read.csv(csvfile)
   datadf$labels <- ""
   colnames(datadf) <- c("ID", "Expression", "Cell_Line","Primary_Disease", "Lineage", "All_Primary_Disease","Label")
