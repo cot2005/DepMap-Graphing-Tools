@@ -7,4 +7,7 @@ Usage:
   csvfile = string with file name 
   genename = string with gene name
   labels = vector containing strings of cell line names to be labeled.
+  height = height of output pdf
+  width = width of output pdf 
+  fileName = string of output file name
 ```
